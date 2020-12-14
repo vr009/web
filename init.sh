@@ -1,3 +1,9 @@
 #hi here
-pwd
 
+cd /home/box/web
+
+mkdir public uploads
+
+cd public
+
+mkdir js css img
