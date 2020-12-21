@@ -1,13 +1,14 @@
 from urllib.parse import urlparse, parse_qs
 
 def my_wsgi(environ,start_response)
-  answer_string = environ.get(QUERY_STRING)
-  temp_body = answer_string.split("&")
-  body = "\n".join(temp_body)
-  status = '200 OK'
-  headers = [
+  if environ.get(REQUEST_METHOD) == "GET"
+    answer_string = environ.get(QUERY_STRING)
+    temp_body = answer_string.split("&")
+    body = "\n".join(temp_body)
+    status = '200 OK'
+    headers = [
     ('Content-Type','text/plain')
     ]
-    
-    start_response(status,headers)
-    return [body]
+  start_response(status,headers)
+  return [body]
+   
