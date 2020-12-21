@@ -12,3 +12,5 @@ def my_wsgi(environ,start_response)
   start_response(status,headers)
   return [body]
    
+#body = [bytes(i + '\n', 'ascii') for i in environ['QUERY_STRING'].split('&')]
+#return body
